@@ -1,7 +1,7 @@
-import MenuIcon from "@/assets/images/icon-menu.svg?react";
-import ProfilePicture from "@/assets/images/image-avatar.png";
-import Logo from "@/assets/images/logo.svg?react";
+import MenuIcon from "@/assets/icon-menu.svg?react";
+import Logo from "@/assets/logo.svg?react";
 import { CartIcon } from "./cart-icon";
+import ProfilePicture from "/image-avatar.png";
 
 export function Header() {
   return (

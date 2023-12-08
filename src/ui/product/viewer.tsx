@@ -1,6 +1,5 @@
-import IconNext from "@/assets/images/icon-next.svg";
-import IconPrevious from "@/assets/images/icon-previous.svg";
-
+import IconNext from "@/assets/icon-next.svg";
+import IconPrevious from "@/assets/icon-previous.svg";
 import { useState } from "react";
 
 export function ProductViewer({ pictures }: { pictures: string[] }) {
@@ -18,6 +17,7 @@ export function ProductViewer({ pictures }: { pictures: string[] }) {
             setPictureIndex(nextIndex < 0 ? pictures.length - 1 : nextIndex);
           }}
         />
+
         <SlideButton
           type="next"
           handler={() => {

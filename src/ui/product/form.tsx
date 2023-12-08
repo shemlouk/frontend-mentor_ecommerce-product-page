@@ -1,7 +1,7 @@
 "use client";
 
-import IconMinus from "@/assets/images/icon-minus.svg?react";
-import IconPlus from "@/assets/images/icon-plus.svg?react";
+import IconMinus from "@/assets/icon-minus.svg?react";
+import IconPlus from "@/assets/icon-plus.svg?react";
 
 import { useState } from "react";
 import { CartIcon } from "../cart-icon";
