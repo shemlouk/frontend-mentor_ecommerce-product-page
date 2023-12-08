@@ -10,7 +10,7 @@ export function ProductPage(product: Product) {
 
       <div className="flex flex-col gap-8 p-5">
         <ProductInformation {...product} />
-        <ProductForm />
+        <ProductForm product={product} />
       </div>
     </main>
   );
