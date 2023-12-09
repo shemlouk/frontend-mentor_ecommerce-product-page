@@ -48,18 +48,18 @@ export function Header() {
           </nav>
         </div>
 
-        <div className="flex items-center gap-6">
+        <div className="relative flex items-center gap-6">
           <button className="relative" onClick={() => setOpenCart(!openCart)}>
             <CartIcon state={openCart ? "selected" : "idle"} />
 
             {quantity > 0 && (
-              <div className="animate-jump-in animate-duration-200 absolute -right-3 -top-3 rounded-full bg-orange px-2 pt-[2px] text-xs font-semibold text-white">
+              <div className="absolute -right-3 -top-3 animate-jump-in rounded-full bg-orange px-2 pt-[2px] text-xs font-semibold text-white animate-duration-200">
                 {quantity}
               </div>
             )}
-
-            <CartModal open={openCart} />
           </button>
+
+          <CartModal open={openCart} />
 
           <img
             src={ProfilePicture}
@@ -70,8 +70,11 @@ export function Header() {
       </header>
 
       <dialog ref={navBarRef} className="group m-0 bg-transparent md:hidden">
-        <nav className="group-open:animate-fade-right group-open:animate-duration-300 fixed flex h-screen w-2/3 flex-col gap-8 bg-white p-6">
-          <CloseIcon onClick={() => navBarRef.current?.close()} />
+        <nav className="fixed flex h-screen w-2/3 flex-col gap-8 bg-white p-6 group-open:animate-fade-right group-open:animate-duration-300">
+          <CloseIcon
+            fill="#69707d"
+            onClick={() => navBarRef.current?.close()}
+          />
 
           <ul className="flex flex-col gap-4">
             {pages.map((page, index) => (
