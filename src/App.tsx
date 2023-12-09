@@ -9,9 +9,11 @@ const { products } = data;
 export function App() {
   return (
     <CartContextProvider>
-      <div className="flex flex-col text-veryDarkBlue">
-        <Header />
-        <ProductPage {...products[0]} />
+      <div className="flex justify-center">
+        <div className="flex min-w-min flex-col text-veryDarkBlue md:max-w-screen-lg md:gap-20">
+          <Header />
+          <ProductPage {...products[0]} />
+        </div>
       </div>
     </CartContextProvider>
   );

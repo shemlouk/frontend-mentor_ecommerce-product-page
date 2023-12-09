@@ -15,7 +15,7 @@ export function CartModal({ open }: { open: boolean }) {
   return (
     <dialog
       ref={modalRef}
-      className="open:animate-fade open:animate-duration-500 top-20 w-[95%] overflow-hidden rounded-xl bg-white shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] outline-none"
+      className="open:animate-fade open:animate-duration-300 fixed top-20 w-[95%] overflow-hidden rounded-xl bg-white text-start shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] outline-none md:absolute md:top-12 md:m-0 md:w-96 md:-translate-x-[70%]"
     >
       <h1 className="border-b border-grayishBlue p-5 text-lg font-semibold">
         Cart

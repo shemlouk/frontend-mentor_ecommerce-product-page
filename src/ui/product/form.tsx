@@ -20,14 +20,16 @@ export function ProductForm({ product }: { product: Product }) {
         e.preventDefault();
         updateCartItems({ ...product, quantity });
       }}
-      className="flex flex-col gap-4"
+      className="flex flex-col gap-4 md:flex-row"
     >
-      <div className="flex h-14 w-full items-center justify-between rounded-lg bg-lightGrayishBlue px-6">
+      <div className="flex h-14 w-full items-center justify-between rounded-lg bg-lightGrayishBlue md:w-3/5">
         <button
           onClick={() => quantity > 0 && setQuantity(quantity - 1)}
           type="button"
+          className="group flex h-full w-1/3 cursor-pointer items-center justify-start pl-6 disabled:cursor-not-allowed"
+          disabled={quantity === 0}
         >
-          <IconMinus />
+          <IconMinus className="group-disabled:opacity-50" />
         </button>
 
         <input
@@ -40,7 +42,11 @@ export function ProductForm({ product }: { product: Product }) {
           className="h-full w-1/3 bg-transparent text-center text-lg font-bold outline-none"
         />
 
-        <button onClick={() => setQuantity(quantity + 1)} type="button">
+        <button
+          onClick={() => setQuantity(quantity + 1)}
+          type="button"
+          className="group flex h-full w-1/3 cursor-pointer items-center justify-end pr-6"
+        >
           <IconPlus />
         </button>
       </div>

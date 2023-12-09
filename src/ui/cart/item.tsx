@@ -36,7 +36,7 @@ export function CartItem({
         </p>
       </div>
 
-      <DeleteIcon onClick={() => deleteItem(id)} />
+      <DeleteIcon onClick={() => deleteItem(id)} className="cursor-pointer" />
     </div>
   );
 }
