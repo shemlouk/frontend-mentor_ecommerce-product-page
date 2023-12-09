@@ -23,7 +23,7 @@ export function ProductViewerModal({
     <dialog
       ref={modalRef}
       onClick={(e) => e.currentTarget === e.target && modalRef.current?.close()}
-      className="hidden w-2/5 animate-fade flex-col items-end gap-6 overflow-visible bg-transparent animate-duration-200 backdrop:bg-black/60 md:open:flex"
+      className="hidden w-2/5 max-w-screen-sm animate-fade flex-col items-end gap-6 overflow-visible bg-transparent animate-duration-200 backdrop:bg-black/60 md:open:flex"
     >
       <CloseIcon
         fill="#FF7D1A"
