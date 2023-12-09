@@ -4,12 +4,16 @@ import { CartItem } from "../definitions";
 type CartContextValue = {
   quantity: number;
   items: Map<string, CartItem>;
+  emptyCart(): void;
+  deleteItem(id: string): void;
   updateCartItems(item: CartItem): void;
 };
 
 export const CartContext = createContext<CartContextValue>({
   quantity: 0,
   items: new Map(),
+  emptyCart: () => {},
+  deleteItem: () => {},
   updateCartItems: () => {},
 });
 
@@ -28,6 +32,18 @@ export function CartContextProvider({
     [items],
   );
 
+  const deleteItem = useCallback(
+    (id: string) => {
+      items.delete(id);
+      setItems(new Map(items));
+    },
+    [items],
+  );
+
+  const emptyCart = useCallback(() => {
+    setItems(new Map());
+  }, []);
+
   useEffect(() => {
     let total = 0;
     items.forEach((item) => (total += item.quantity));
@@ -35,7 +51,9 @@ export function CartContextProvider({
   }, [items]);
 
   return (
-    <CartContext.Provider value={{ quantity, items, updateCartItems }}>
+    <CartContext.Provider
+      value={{ quantity, items, emptyCart, deleteItem, updateCartItems }}
+    >
       {children}
     </CartContext.Provider>
   );

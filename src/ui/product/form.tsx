@@ -7,7 +7,7 @@ import { useContext, useState } from "react";
 
 import { CartContext } from "@/lib/contexts/cart";
 import { Product } from "@/lib/definitions";
-import { CartIcon } from "../cart-icon";
+import { CartIcon } from "../cart/icon";
 import { SubmitButton } from "../form/submit-button";
 
 export function ProductForm({ product }: { product: Product }) {
